@@ -1,0 +1,10 @@
+'use strict';
+// var cycles = [10, 20];
+// var workers = [4, 16, 32, 64];
+// var codec = ['json', 'msgpack'];
+// var disseminationFactor = [4, 16, 32];
+// var interval = [10, 100];
+// var pingTimeout = [4, 16];
+// var pingReqTimeout = [12, 48];
+// var pingReqGroupSize = [1, 4];
+// var maxDgramSize = [512, 1024, 2048];
