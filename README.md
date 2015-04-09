@@ -1,6 +1,7 @@
 # swim-js [![Build Status](https://travis-ci.org/mrhooray/swim-js.svg?branch=master)](https://travis-ci.org/mrhooray/swim-js)
-> JavaScript implementation of [Gossip](http://en.wikipedia.org/wiki/Gossip_protocol) protocol based on [SWIM](http://www.cs.cornell.edu/~asdas/research/dsn02-SWIM.pdf)
+> JavaScript implementation of [SWIM](http://www.cs.cornell.edu/~asdas/research/dsn02-SWIM.pdf) membership protocol
 
+* [npm](https://www.npmjs.com/package/swim)
 * [Motivation](#motivation)
 * [Usage](#usage)
 * [Benchmark](#benchmark)
@@ -8,9 +9,9 @@
 * [License](#license)
 
 ##Motivation
-A decentralized way of managing membership is needed for large clusters.
-Swim handles failure detection and membership dissemination in a scalable and weakly-consistent way.
-It can be used in implementation of consistent hash ring, application layer sharding and replication, etc.
+Membership management is important to distributed systems and large clusters need a decentralized protocol such as SWIM,
+ which handles failure detection and membership dissemination in a scalable and weakly-consistent way.
+It can be used to implement functionalities based on membership like distributed consensus, application layer sharding, log replication, etc.
 
 ##Usage
 Installation
