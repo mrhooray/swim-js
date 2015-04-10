@@ -1,6 +1,6 @@
 {
   "name": "swim",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Gossip protocol based on SWIM",
   "main": "index.js",
   "scripts": {
