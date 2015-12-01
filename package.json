@@ -37,8 +37,8 @@
     "clone": "^0.2.0",
     "commander": "^2.6.0",
     "debug": "^2.1.1",
-    "farmhash": "^0.2.2",
+    "farmhash": "^1.1.0",
     "metrics": "^0.1.9",
-    "msgpack": "^0.2.4"
+    "msgpack": "^1.0.2"
   }
 }
