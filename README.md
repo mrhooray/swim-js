@@ -1,7 +1,7 @@
-# swim-js [![Build Status](https://travis-ci.org/mrhooray/swim-js.svg?branch=master)](https://travis-ci.org/mrhooray/swim-js)
+# swim-js [![Build Status](https://travis-ci.org/happner/swim-js.svg?branch=master)](https://travis-ci.org/happner/swim-js)
 > JavaScript implementation of [SWIM](http://www.cs.cornell.edu/~asdas/research/dsn02-SWIM.pdf) membership protocol
 
-* [npm](https://www.npmjs.com/package/swim)
+* [npm](https://www.npmjs.com/package/happn-swim)
 * [Motivation](#motivation)
 * [Usage](#usage)
 * [Benchmark](#benchmark)
@@ -16,10 +16,10 @@ It can be used to implement functionalities based on membership like distributed
 ##Usage
 Installation
 ```sh
-npm install swim --save
+npm install happn-swim --save
 ```
 ```js
-var Swim = require('swim');
+var Swim = require('happn-swim');
 var opts = {
     local: {
         // restarting members should resume incarnation sequence (or 0)
@@ -27,7 +27,6 @@ var opts = {
         host: '10.31.1.191:11000',
         meta: {'application': 'info'} // optional
     },
-    codec: 'msgpack', // optional
     disseminationFactor: 15, // optional
     interval: 100, // optional
     joinTimeout: 200, // optional
@@ -52,6 +51,7 @@ swim.bootstrap(hostsToJoin, function onBootstrap(err) {
 
     // change on membership, e.g. new node or node died/left
     swim.on(Swim.EventType.Change, function onChange(update) {});
+    
     // update on membership, e.g. node recovered or update on meta data
     swim.on(Swim.EventType.Update, function onUpdate(update) {
       // if self and incarnation increased, save it (previousIncarnation)
