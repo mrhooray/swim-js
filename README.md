@@ -1,7 +1,7 @@
-# swim-js [![Build Status](https://travis-ci.org/mrhooray/swim-js.svg?branch=master)](https://travis-ci.org/mrhooray/swim-js)
+# swim-js [![Build Status](https://travis-ci.org/happner/swim-js.svg?branch=master)](https://travis-ci.org/happner/swim-js)
 > JavaScript implementation of [SWIM](http://www.cs.cornell.edu/~asdas/research/dsn02-SWIM.pdf) membership protocol
 
-* [npm](https://www.npmjs.com/package/swim)
+* [npm](https://www.npmjs.com/package/happn-swim)
 * [Motivation](#motivation)
 * [Usage](#usage)
 * [Benchmark](#benchmark)
@@ -16,10 +16,10 @@ It can be used to implement functionalities based on membership like distributed
 ##Usage
 Installation
 ```sh
-npm install swim --save
+npm install happn-swim --save
 ```
 ```js
-var Swim = require('swim');
+var Swim = require('happn-swim');
 var opts = {
     local: {
         // restarting members should resume incarnation sequence (or 0)

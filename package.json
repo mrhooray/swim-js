@@ -1,6 +1,6 @@
 {
-  "name": "swim",
-  "version": "0.3.0",
+  "name": "happn-swim",
+  "version": "1.0.0",
   "description": "Gossip protocol based on SWIM",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mrhooray/swim-js.git"
+    "url": "https://github.com/happner/swim-js.git"
   },
   "keywords": [
     "gossip",
@@ -22,9 +22,9 @@
   "author": "Rui Hu <ruihu.pvt@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mrhooray/swim-js/issues"
+    "url": "https://github.com/happner/swim-js/issues"
   },
-  "homepage": "https://github.com/mrhooray/swim-js",
+  "homepage": "https://github.com/happner/swim-js",
   "devDependencies": {
     "async": "^0.9.0",
     "covert": "^1.0.1",
