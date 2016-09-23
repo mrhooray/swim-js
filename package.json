@@ -26,18 +26,18 @@
   },
   "homepage": "https://github.com/happner/swim-js",
   "devDependencies": {
-    "async": "^0.9.0",
-    "commander": "^2.6.0",
-    "covert": "^1.0.1",
+    "async": "^0.9.2",
+    "commander": "^2.9.0",
+    "covert": "^1.1.0",
+    "jscs": "^1.13.1",
+    "jshint": "^2.9.3",
     "metrics": "^0.1.9",
-    "jscs": "^1.10.0",
-    "jshint": "^2.6.0",
-    "tap-spec": "^2.2.0",
-    "tape": "^3.4.0"
+    "tap-spec": "^2.2.2",
+    "tape": "^3.6.1"
   },
   "dependencies": {
     "clone": "^1.0.2",
-    "debug": "^2.1.1",
+    "debug": "^2.2.0",
     "md5": "^2.2.1"
   }
 }
