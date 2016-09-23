@@ -18,7 +18,7 @@ function parseArgs() {
     program
     .option('--cycles [value]', 'number of cycles', parseInt, 10)
     .option('--workers [value]', 'number of workers', parseInt, 10)
-    .option('--codec [value]', 'msgpack or json', 'msgpack')
+    .option('--codec [value]', 'json', 'json')
     .option('--dissemination-factor [value]', 'dissemination factor', parseInt, 15)
     .option('--interval [value]', 'interval', parseInt, 20)
     .option('--join-timeout [value]', 'join timeout', parseInt, 100)

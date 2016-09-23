@@ -27,7 +27,6 @@ var opts = {
         host: '10.31.1.191:11000',
         meta: {'application': 'info'} // optional
     },
-    codec: 'msgpack', // optional
     disseminationFactor: 15, // optional
     interval: 100, // optional
     joinTimeout: 200, // optional
@@ -52,6 +51,7 @@ swim.bootstrap(hostsToJoin, function onBootstrap(err) {
 
     // change on membership, e.g. new node or node died/left
     swim.on(Swim.EventType.Change, function onChange(update) {});
+    
     // update on membership, e.g. node recovered or update on meta data
     swim.on(Swim.EventType.Update, function onUpdate(update) {
       // if self and incarnation increased, save it (previousIncarnation)
