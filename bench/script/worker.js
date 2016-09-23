@@ -23,7 +23,7 @@ function parseArgs() {
     .option('--hosts-to-join [hosts]', 'hosts to join', function split(list) {
         return list.split(',');
     }, [])
-    .option('--codec [value]', 'msgpack or json')
+    .option('--codec [value]', 'json')
     .option('--dissemination-factor [value]', 'dissemination factor', parseInt)
     .option('--interval [value]', 'interval', parseInt)
     .option('--join-timeout [value]', 'join timeout', parseInt)
