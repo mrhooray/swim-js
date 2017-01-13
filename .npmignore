@@ -1,0 +1,8 @@
+# Do not package non-functional code when importing this package via
+# npm.
+docs/
+bench/
+test/
+.travis.yml
+.jscsrc
+.jshint.rc
