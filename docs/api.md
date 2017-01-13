@@ -9,8 +9,8 @@
 - onBootStrapFunction(err) - handler
 * whoami() - node identifier
 * members(hasLocal, hasFaulty) - gets a list of nodes in the network.
-hasLocal - nodes locally connected to this node.
-hasFaulty - nodes that are labeled suspect.
+hasLocal - include local/current node.
+hasFaulty - include nodes marked as faulty.
 * checksum() - ???
 
 ##
@@ -33,29 +33,36 @@ encoding to send payloads.  Default msgpack.
 bytes sent by the payload.
 
 ##disseminationFactor
-When a node encounters an unresponsive node, it will mark that node "suspicious",
-if enough nodes mark the node as suspect, then the node is dropped form the
-network.
+Dissemination factor can be used to fine tune the responsiveness of the cluster.
+Greater dissemination factor results to:
+* more hosts being notified in every round of dissemination
+* lower convergence time of cluster membership
+* more/bigger network packets being sent
+
+and vice versa.
 
 ##interval
-Number of milliseconds between failure detection intervals.  Every X
-milliseconds, nodes will ping a member of the SWIM network to check if its peer
-is still running/responding.
+Number of milliseconds between failure detections, also known as the protocol
+interval. Every X milliseconds, nodes will ping a member of the SWIM network to
+check its liveness with Time-Bounded Strong Completeness as described in the
+[paper](http://www.cs.cornell.edu/~asdas/research/dsn02-SWIM.pdf).
 
 ##joinTimeout
 Number of milliseconds before emitting a JoinTimeout error.  The node will still
 run as a base node separate from the network.
 
 ##pingTimout
-Average ping response time threshold, in milliseconds, for suspicion.
+Number of milliseconds before sending ping-req messages to the unresponsive node.
 
 ##pingReqTimout
-Any ping response time above this threshold, in milliseconds, will mark this
-node suspicious
+Number of milliseconds elapsed from sending ping-req message before marking the
+unresponsive node suspicious.
 
 ##pingReqGroupSize
-Number of pings to use to get average response time.
+Number of hosts to send ping-req messages to for pinging unresponsive nodes
+indirectly to reduce false positives.
 
 ##udp
 UDP Options
-* maxDgramSize - max size of UDP datagram before sending.
+* maxDgramSize - Max size of UDP datagram. If bigger than what the network supports,
+messages might be chunked into multiple packets and discarded at receiver end.
