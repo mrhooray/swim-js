@@ -65,6 +65,8 @@ swim.on(Swim.EventType.Error, function onError(err) {});
 swim.on(Swim.EventType.Ready, function onReady() {});
 ```
 
+[Additional API Documentation](docs/api.md)
+
 ##Benchmark
 Benchmark convergence time under different configuration
 ```sh
