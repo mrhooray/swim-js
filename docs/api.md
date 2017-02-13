@@ -62,6 +62,9 @@ unresponsive node suspicious.
 Number of hosts to send ping-req messages to for pinging unresponsive nodes
 indirectly to reduce false positives.
 
+##suspectTimeout
+Number of milliseconds before considering a suspect faulty.
+
 ##udp
 UDP Options
 * maxDgramSize - Max size of UDP datagram. If bigger than what the network supports,

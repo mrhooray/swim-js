@@ -29,6 +29,7 @@ var opts = {
     disseminationFactor: 15, // optional
     interval: 100, // optional
     joinTimeout: 200, // optional
+    suspectTimeout: 10, // optional
     pingTimeout: 20, // optional
     pingReqTimeout: 60, // optional
     pingReqGroupSize: 3, // optional
