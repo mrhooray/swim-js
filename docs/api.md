@@ -32,7 +32,7 @@ encoding to send payloads.  Default msgpack.
 * msgpack - Uses msgpack, http://msgpack.org/, encoding to reduce number of
 bytes sent by the payload.
 
-##disseminationFactor
+### disseminationFactor
 Dissemination factor can be used to fine tune the responsiveness of the cluster.
 Greater dissemination factor results to:
 * more hosts being notified in every round of dissemination
@@ -41,28 +41,28 @@ Greater dissemination factor results to:
 
 and vice versa.
 
-##interval
+### interval
 Number of milliseconds between failure detections, also known as the protocol
 interval. Every X milliseconds, nodes will ping a member of the SWIM network to
 check its liveness with Time-Bounded Strong Completeness as described in the
 [paper](http://www.cs.cornell.edu/~asdas/research/dsn02-SWIM.pdf).
 
-##joinTimeout
+### joinTimeout
 Number of milliseconds before emitting a JoinTimeout error.  The node will still
 run as a base node separate from the network.
 
-##pingTimout
+### pingTimout
 Number of milliseconds before sending ping-req messages to the unresponsive node.
 
-##pingReqTimout
+### pingReqTimout
 Number of milliseconds elapsed from sending ping-req message before marking the
 unresponsive node suspicious.
 
-##pingReqGroupSize
+### pingReqGroupSize
 Number of hosts to send ping-req messages to for pinging unresponsive nodes
 indirectly to reduce false positives.
 
-##udp
+### udp
 UDP Options
 * maxDgramSize - Max size of UDP datagram. If bigger than what the network supports,
 messages might be chunked into multiple packets and discarded at receiver end.
