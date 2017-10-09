@@ -8,12 +8,14 @@
 * [TODO](#todo)
 * [License](#license)
 
-##Motivation
+## Motivation
+
 Membership management is important to distributed systems and large clusters need a decentralized protocol such as SWIM,
  which handles failure detection and membership dissemination in a scalable and weakly-consistent way.
 It can be used to implement functionalities based on membership like distributed consensus, application layer sharding, log replication, etc.
 
-##Usage
+## Usage
+
 Installation
 ```sh
 npm install swim --save
@@ -67,7 +69,8 @@ swim.on(Swim.EventType.Ready, function onReady() {});
 
 [Additional API Documentation](docs/api.md)
 
-##Benchmark
+## Benchmark
+
 Benchmark convergence time under different configuration
 ```sh
 node bench/script/convergence-time.js -h
@@ -116,9 +119,11 @@ histogram data:
 - p99 123
 ```
 
-##TODO
+## TODO
+
 - [ ] Documentation for API and events
 - [ ] Optional secondary protocol like periodic full sync
 
-##License
+## License
+
 MIT
