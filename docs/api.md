@@ -32,13 +32,16 @@ Get members in the cluster.
 ### checksum()
 Get membership checksum.
 
+### updateMeta(meta)
+Update metadata of local node and disseminate within cluster.
+
 ## Options Object
 This object contains configuration settings.
 
 ### local
 Local Option.
 * local.host (required) - address:port for this instance, e.g. 127.0.0.1:11000
-* local.meta (optional) - metadata about this node, which will be desseminated within cluster
+* local.meta (optional) - metadata about this node, which will be disseminated within cluster
 
 ### codec
 Codec of message payload. Default: msgpack.
