@@ -34,6 +34,7 @@ var opts = {
     pingTimeout: 20, // optional
     pingReqTimeout: 60, // optional
     pingReqGroupSize: 3, // optional
+    suspectTimeout: 60, // optional
     udp: {maxDgramSize: 512} // optional
 };
 var swim = new Swim(opts);
