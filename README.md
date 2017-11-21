@@ -5,7 +5,6 @@
 * [Motivation](#motivation)
 * [Usage](#usage)
 * [Benchmark](#benchmark)
-* [TODO](#todo)
 * [License](#license)
 
 ## Motivation
@@ -120,11 +119,6 @@ histogram data:
 - p95 123
 - p99 123
 ```
-
-## TODO
-
-- [ ] Documentation for API and events
-- [ ] Optional secondary protocol like periodic full sync
 
 ## License
 
