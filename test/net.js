@@ -250,7 +250,8 @@ test('Net can send and receive multiple messages batched over packets', function
             }
         ], function parallelCallback() {
             assert.strictEqual(packetCount < messageCount, true);
-            assert.deepEqual(received, messages);
+            assert.deepEqual(received.length, messages.length);
+            assert.deepEqual(sum(received), sum(messages));
 
             receiver.removeAllListeners();
 
@@ -261,3 +262,9 @@ test('Net can send and receive multiple messages batched over packets', function
         });
     });
 });
+
+function sum(messages) {
+    messages.reduce(function sum(acc, m) {
+        return acc += m.seq;
+    }, 0);
+}
