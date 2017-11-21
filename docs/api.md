@@ -1,36 +1,49 @@
 # API Documentation
 
-# Swim object
+## Swim object
 
-## methods
-* constructor(options) - See Options Object.
-* boostrap(hostsToJoin, onBootStrapFunction) -
-- hostsToJoin - Addresses (with port) to try to connect to when joining the network.
-- onBootStrapFunction(err) - handler
-* whoami() - node identifier
-* members(hasLocal, hasFaulty) - gets a list of nodes in the network.
-hasLocal - include local/current node.
-hasFaulty - include nodes marked as faulty.
-* checksum() - ???
+### Constructor(options)
+See Options Object.
 
-##
+### boostrap(hosts, callback)
+Bootstrap swim instance and join cluster.
+* hosts - address:port list to connect to when joining the cluster
+* callback(err) - callback function
 
-# Options Object
+### join(hosts, callback)
+Join cluster.
+* hosts - address:port list to connect to when joining the cluster
+* callback(err) - callback function
+
+### leave()
+Leave cluster.
+
+### localhost()
+Get host for local node.
+
+### whoami()
+Alias to localhost().
+
+### members(hasLocal, hasFaulty)
+Get members in the cluster.
+* hasLocal - include local node
+* hasFaulty - include nodes marked as faulty
+
+### checksum()
+Get membership checksum.
+
+## Options Object
 This object contains configuration settings.
 
-## local
-* local.host (required) - address and port for this instance.  ex: localhost:11000, the
-address portion of the host entry will be used as an identifier for this node,
-while the port number portion will be the port this node will listen to for
-new connections.
-* local.meta (optional) - Additional information to add meta data about this node.  This
-will be associated with the node identification when sending messages.
+### local
+Local Option.
+* local.host (required) - address:port for this instance, e.g. 127.0.0.1:11000
+* local.meta (optional) - metadata about this node, which will be desseminated within cluster
 
-## codec
-encoding to send payloads.  Default msgpack.
-* json - encodes message sent between nodes as raw json.
-* msgpack - Uses msgpack, http://msgpack.org/, encoding to reduce number of
-bytes sent by the payload.
+### codec
+Codec of message payload. Default: msgpack.
+* json - https://www.json.org/
+* msgpack - https://msgpack.org/
 
 ### disseminationFactor
 Dissemination factor can be used to fine tune the responsiveness of the cluster.
@@ -48,7 +61,7 @@ check its liveness with Time-Bounded Strong Completeness as described in the
 [paper](http://www.cs.cornell.edu/~asdas/research/dsn02-SWIM.pdf).
 
 ### joinTimeout
-Number of milliseconds before emitting a JoinTimeout error.  The node will still
+Number of milliseconds before emitting a JoinTimeout error. The node will still
 run as a base node separate from the network.
 
 ### pingTimout
@@ -63,9 +76,12 @@ Number of hosts to send ping-req messages to for pinging unresponsive nodes
 indirectly to reduce false positives.
 
 ### suspectTimeout
-Number of milliseconds before considering a suspect node faulty
+Number of milliseconds before considering a suspect node faulty.
 
 ### udp
-UDP Options
-* maxDgramSize - Max size of UDP datagram. If bigger than what the network supports,
+UDP Option.
+* udp.maxDgramSize - Max size of UDP datagram. If bigger than what the network supports,
 messages might be chunked into multiple packets and discarded at receiver end.
+
+### preferCurrentMeta
+If set to true, current metadata of local node, instead of the copy of metadata of local node in cluster membership, will be used during conflict resolution. Defaut: false.

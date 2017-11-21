@@ -35,7 +35,8 @@ var opts = {
     pingReqTimeout: 60, // optional
     pingReqGroupSize: 3, // optional
     suspectTimeout: 60, // optional
-    udp: {maxDgramSize: 512} // optional
+    udp: {maxDgramSize: 512}, // optional
+    preferCurrentMeta: true // optional
 };
 var swim = new Swim(opts);
 var hostsToJoin = ['10.31.1.192:11000', '10.31.1.193:11000'];
